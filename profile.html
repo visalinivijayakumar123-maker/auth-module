@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+</head>
+<body>
+  <h1>Profile Page</h1>
+  <div id="profileInfo"></div>
+  <a href="index.html">Logout</a>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem('user'));
+    const profileDiv = document.getElementById('profileInfo');
+    if (user) {
+      profileDiv.innerHTML = `<h2>Welcome, ${user.name}</h2><p>Email: ${user.email}</p>`;
+    } else {
+      profileDiv.innerHTML = '<p>No user logged in.</p>';
+    }
+  </script>
+</body>
+</html>
